@@ -1,6 +1,6 @@
 ## Summer 2019 Intern Planning
 
-Electron Team Interns
+Electron Interns
 
 |                  | Avatar                       | Start Date | End Date    | Buddy        | Manager      |
 |------------------|-----------------------------------|------------|-------------|--------------|--------------|
