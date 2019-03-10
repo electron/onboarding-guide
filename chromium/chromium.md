@@ -61,5 +61,4 @@ Blink is a rendering engine of the web platform, which can be found in Chromium'
 ### Development Patterns
 
 * [`base::Optional`](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/optional.md)
-* [`Callback<> and Bind()`](https://chromium.googlesource.com/chromium/src/+/HEAD/docs/callback.md)
 * [Site Isolation](https://www.chromium.org/developers/design-documents/site-isolation)
