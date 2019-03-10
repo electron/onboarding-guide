@@ -35,7 +35,7 @@ bool PostTask(const Location& from_here, OnceClosure task);
 // |task| and |reply| are guaranteed to be deleted on the thread
 // from which PostTaskAndReply() is invoked.  This allows objects
 // that must be deleted on the originating thread to be bound into
-// the |task| and |reply| Closures. 
+// the |task| and |reply| Closures.
 bool PostTaskAndReply(const Location& from_here,
                         OnceClosure task,
                         OnceClosure reply);
@@ -54,7 +54,7 @@ Almost no subclass-specific methods are used in Electron's codebase, so you don'
 
 ## `SingleThreadTaskRunner`
 
-A SingleThreadTaskRunner is a SequencedTaskRunner with one more
+A `SingleThreadTaskRunner` is a `SequencedTaskRunner` with one more
 guarantee; all tasks are run on a single dedicated
 thread.  Most use cases require only a `SequencedTaskRunner`, unless
 there is a specific need to run tasks on only a single thread.

@@ -1,6 +1,6 @@
 ## Chromium
 
-Electron depends on Chromium, an open source initiative developed by Google that powers Google Chrome. Different parts of Electron hook into existing classes and functions in Chromium, and we use many of their helpers as well as follow a significant number of their development patterns. I've included a primer to some different aspects of Chromium that will hlp you become familiar with them as they pop up in different parts of the Electron codebase.
+Electron depends on Chromium, an open source initiative developed by Google that powers Google Chrome. Different parts of Electron hook into existing classes and functions in Chromium, and we use many of their helpers as well as follow a significant number of their development patterns. I've included a primer to some different aspects of Chromium that will help you become familiar with them as they pop up in different parts of the Electron codebase.
 
 [Chromium University](https://www.chromium.org/developers/tech-talk-videos)
    * a series of videos discussing various aspct of Chromium's design philosophy and overarching architecture
@@ -15,9 +15,11 @@ Chromium and Electron both use what's known as [Multi-Process Architecture](http
 
 These are the top-level projects in Chromium's source.
 
+**NOTA BENE:** In particular, we care about `base`, `content`, `net`, `third_party`, and `v8` (see [v8](v8.md) for more!).
+
 * `android_webview`: Provides a facade over src/content suitable for integration into the android platform. NOT intended for usage in * individual android applications (APK). More information about the Android WebView source code organization.
 * `apps`: Chrome packaged apps.
-* `base`: Common code shared between all sub-projects. This contains things like string manipulation, generic utilities, etc. Add things here only if it must be shared between more than one other top-level project. 
+* `base`: Common code shared between all sub-projects. This contains things like string manipulation, generic utilities, etc. Add things here only if it must be shared between more than one other top-level project.
 * `breakpad`: Google's open source crash reporting project. This is pulled directly from Google Code's Subversion repository.
 * `build`: Build-related configuration shared by all projects.
 * `cc`: The Chromium compositor implementation.
@@ -38,8 +40,6 @@ tools
 * `ui/views`: A simple framework for doing UI development, providing rendering, layout and event handling. Most of the browser UI is implemented in this system. This directory contains the base objects. Some more browser-specific objects are in chrome/browser/ui/views.
 * `url`: Google's open source URL parsing and canonicalization library.
 * `v8:` The V8 Javascript library. This is pulled directly from Google Code's Subversion repository.
-
-**NOTA BENE:** In particular, we care about `base`, `content`, `net`, `third_party`, and `v8` (see [v8](v8.md) for more!).
 
 ### Blink
 

@@ -11,6 +11,6 @@ Welcome to the Electron team, @erickzhao & @deermichel! We're so excited to have
 1. [Electron](electron.md)
    1. Getting Started
    2. Source Code Design
-2. [Chromium](chromium.md)
+2. [Chromium](chromium/chromium.md)
 3. [V8](v8.md)
 4. [Node.js](nodejs.md)
