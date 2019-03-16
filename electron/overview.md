@@ -74,3 +74,5 @@ A hierarchy chart is shown below. Any given module is implemented along the spec
 |                                                                         |
 +-------------------------------------------------------------------------+
 ```
+
+**Nota Bene:** A bunch of stuff in our source code is inside the `atom/` folder and prefixed with `atom_` because Electron [used to be called `atom-shell`](https://electronjs.org/blog/electron).
