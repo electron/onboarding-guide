@@ -57,7 +57,7 @@ A hierarchy chart is shown below. Any given module is implemented along the spec
 +-------------------------------------------------------------------------+
 |                                                                         |
 |                            +---------------+                            |
-|                            |  `dialog.js`  |                            |
+|                            |   dialog.js   |                            |
 |                            +---------------+                            |
 |                                    |                                    |
 |                                    |                                    |

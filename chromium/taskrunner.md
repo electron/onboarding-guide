@@ -10,7 +10,7 @@ run.  `TaskRunner `provides very weak guarantees as to how posted
 tasks are run (or if they're run at all).  In particular, it only
 guarantees:
 * Posting a task will not run it synchronously.  That is, no
-  `Post*Task` method will call task.Run() directly.
+  `Post*Task` method will call `task.Run()` directly.
 * Increasing the delay can only delay when the task gets run.
   That is, increasing the delay may not affect when the task gets
   run, or it could make it run later than it normally would, but
