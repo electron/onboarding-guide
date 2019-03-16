@@ -45,11 +45,13 @@ Electron
 Any given module is either a **browser** module (meaning it runs in the main process only), a **renderer** module (renderer process only), or a **common** module, meaning it can run in both the browser and renderer processes.
 
 `lib/` and `atom/` generally mirror each other in directory structure, and are where the modules themselves are implemented. By knowing what type a module is, you can use this knowledge to find out where it lives.
-* Example: the `Dialog` module
-  * This is a **main** process module, so we can expect that if we navigate to `lib/browser/api` that it will exist there as a top-level js file (`dialog.js`).
-    * We also know from this that we can find its native implementation api files inside `atom/browser/api`!
-    * Dialogs are specific to platforms, though, so we'll need to also fall down from `atom_api_dialog.[h|cc]` into more specific file dialog implementations.
-      * For this, we wander into `atom/browser/ui` where we see specific implementations for MacOS, Windows, and Linux (GTK).
+
+### Example: the `Dialog` module
+
+* This is a **main** process module, so we can expect that if we navigate to `lib/browser/api` that it will exist there as a top-level js file (`dialog.js`).
+  * We also know from this that we can find its native implementation api files inside `atom/browser/api`!
+  * Dialogs are specific to platforms, though, so we'll need to also fall down from `atom_api_dialog.[h|cc]` into more specific file dialog implementations.
+    * For this, we wander into `atom/browser/ui` where we see specific implementations for MacOS, Windows, and Linux (GTK).
 
 A hierarchy chart is shown below. Any given module is implemented along the spectrum from JavaScript to C++ to Objective-C, depending on the needs of that specific module and the way that it connects to Chromium. Sometimes whole methods will exist entirely in JS, sometimes they'll be sanitized or otherwise manipulated in JS and then passed to native implementations, and sometimes they'll be entirely native.
 
@@ -64,10 +66,10 @@ A hierarchy chart is shown below. Any given module is implemented along the spec
 |                       +------------------------+                        |
 |                       | atom_api_dialog.[h|cc] |                        |
 |                       +------------+-----------+                        |
-|                                    |                                    |
-|                                    |                                    |
-|                                    |                                    |
-|                                    |                                    |
+|                        /           |           \                        |
+|                       /            |            \                       |
+|                      /             |             \                      |
+|                     /              |              \                     |
 |  +--------------------+ +----------+---------+  +--------------------+  |
 |  | file_dialog_gtk.cc | | file_dialog_win.cc |  | file_dialog_mac.mm |  |
 |  +--------------------+ +--------------------+  +--------------------+  |
