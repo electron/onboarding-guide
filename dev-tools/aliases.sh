@@ -7,21 +7,11 @@
 ##### NAVIGATION #####
 
 # TODO(you!): update to correct path
-alias e='<your path to electron-gn/src/electron>'
-alias libuv='dv && cd libuv'
-alias enode='dv && cd node'
-alias libcc='dv && cd libchromiumcontent'
-alias repros='dv && cd repros'
-
-# aliases for building electron on major versions <= v3
-# you probably won't need to use these but here they are anyway
-alias oe='dv && cd electron'
-alias oeb='python ./script/bootstrap.py -d -v'
-alias oebd='python ./script/build.py -c D'
-alias oerun='~/Developer/electron/out/D/Electron.app/Contents/MacOS/Electron'
+alias e='<YOUR_PATH_TO_ELECTRON_DIR>'
 
 # restart your sccache server if it's having timeout issues
-alias ss='~/Developer/electron-gn/src/electron/external_binaries/sccache --start-server'
+# TODO(you!): update to correct path
+alias ss='<YOUR_PATH_TO_ELECTRON_DIR>/external_binaries/sccache --start-server'
 
 ##### BUILDING #####
 
@@ -87,7 +77,7 @@ test_setup_run() {
 alias ebrun='build_run'
 
 # TODO(you!): update with your path to the elecron binary
-alias erun='~/Developer/electron-gn/src/out/Debug/Electron.app/Contents/MacOS/Electron'
+alias erun='<YOUR_PATH_TO_ELECTRON_BINARY>'
 build_run() {
   # save original pwd
   run_dir=$(pwd)
@@ -104,4 +94,5 @@ build_run() {
 # set electron binary as debug target and run with lldb
 # you can use this to run and test a crash and see a better stack trace!
 # https://lldb.llvm.org/lldb-gdb.html
-alias debug='lldb ~/Developer/electron-gn/src/out/Debug/Electron.app/Contents/MacOS/Electron'
+# TODO(you!): update with your path to the elecron binary
+alias debug='lldb <YOUR_PATH_TO_ELECTRON_BINARY>'
