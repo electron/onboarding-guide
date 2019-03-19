@@ -12,8 +12,6 @@ const binding = process.electronBinding('app')
 
 This line points directly to Electron's mechanism for binding its C++/Objective-C modules to JavaScript for use by developers.
 
-[gif here]
-
 This function is created by the header and [implementation file](https://github.com/electron/electron/tree/master/atom/common/api/atom_bindings.cc) for the `ElectronBindings` class.
 
 ## `process.electronBinding`
@@ -88,8 +86,4 @@ Object.defineProperty(app, 'myProperty', {
 })
 ```
 
-With this, it’s possible to create JavaScript objects formed with prototypes and properties as developers expect them, and more clearly reason about functions and properties implemented at this lower system level!
-
-The decision around where to implement any given module method is itself a complex and oft-nondeterministic one, which I'll save for a later post.
-
-I'd also love to know what other Electron mechanisms folks would be interested in hearing more about!
+With this, it’s possible to create JavaScript objects formed with prototypes and properties as developers expect them, and more clearly reason about functions and properties implemented at this lower system level.
