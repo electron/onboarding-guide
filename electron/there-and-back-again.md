@@ -28,10 +28,10 @@ const single = 2;
 const double = main.doubleIt(single);
 console.log(`single is ${single}, double is ${double}`);
 ```
-    
+
 As you'd expect, running this code looks like this:
 
-```
+```sh
 single is 2, double is 4
 ```
 
@@ -50,9 +50,10 @@ exports.require = (module) => {
 ```
 
 The third line shows the renderer process sending three strings to the main process:
- 1. `'ELECTRON_BROWSER_REQUIRE'`
- 2. `contextId`, an [internal](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/atom/renderer/renderer_client_base.cc#L115) string to uniquely identify the IPC caller's source [V8 context](https://v8.dev/docs/embed#contexts).
- 3. The user-provided module parameter (e.g. `./main.js`).
+
+1. `'ELECTRON_BROWSER_REQUIRE'`
+2. `contextId`, an [internal](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/atom/renderer/renderer_client_base.cc#L115) string to uniquely identify the IPC caller's source [V8 context](https://v8.dev/docs/embed#contexts).
+3. The user-provided module parameter (e.g. `./main.js`).
 
 By following `ipcRendererInternal.sendSync()` a few steps ([1](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/lib/renderer/ipc-renderer-internal.ts), [2](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/atom/renderer/api/atom_api_renderer_ipc.cc#L45), [3](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/atom/common/api/api_messages.h#L33a), [4](https://cs.chromium.org/chromium/src/ipc/ipc_message_macros.h?q=IPC_SYNC_MESSAGE_ROUTED3_1&sq=package:chromium&dr=CSs&l=518)), we learn that Electron processes use Chromium's IPC Messages to communicate. Chromium's internals are beyond this article's scope, but interested readers can learn more from its [source](https://cs.chromium.org/chromium/src/ipc/ipc_message_macros.h) and [documentation](https://www.chromium.org/developers/design-documents/inter-process-communication#Messages).
 
@@ -75,9 +76,10 @@ Over in the main process, this call is received [by]( https://github.com/electro
 ```
 
 The `handleRemoteCommand()`  method on line `1` [is](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/lib/browser/rpc-server.js#L281) a small helper that checks permissions, calls the wrapped function, and sends its return values / exceptions back to the calling process. Here, the wrapped function is the `ELECTRON_BROWSER_REQUIRE` handler which does three things:
-  1. Emit a [`remote-require` event](https://electronjs.org/docs/api/app#event-remote-require) in case the app developer wants to override the import.
-  2. If nothing's overridden in step 1, use Node's [`process.mainModule`](https://nodejs.org/api/process.html#process_process_mainmodule) to import `moduleName`.
-  3. The result from steps 1 and 2 is serialized by [`valueToMeta()`](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/lib/browser/rpc-server.js#L69) and returned to `handleRemoteCommand()`, which sends it to the renderer process. The renderer's call to `ipcRendererInternal.sendSync()` finally returns with this `meta`. That's converted back into a value -- or, actually, a renderer process proxy of a main process value -- by `metaToValue()` and returned. The caller to `remote.require()` gets this proxy.
+
+1. Emit a [`remote-require` event](https://electronjs.org/docs/api/app#event-remote-require) in case the app developer wants to override the import.
+2. If nothing's overridden in step 1, use Node's [`process.mainModule`](https://nodejs.org/api/process.html#process_process_mainmodule) to import `moduleName`.
+3. The result from steps 1 and 2 is serialized by [`valueToMeta()`](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/lib/browser/rpc-server.js#L69) and returned to `handleRemoteCommand()`, which sends it to the renderer process. The renderer's call to `ipcRendererInternal.sendSync()` finally returns with this `meta`. That's converted back into a value -- or, actually, a renderer process proxy of a main process value -- by `metaToValue()` and returned. The caller to `remote.require()` gets this proxy.
 
 ## `valueToMeta()` for a simple function
 
@@ -152,11 +154,12 @@ const main = remote.require('./main.js');
 ## Round Trip #2: `doubleIt()`
 
 As seen in the above block, calling `main.doubleIt(2)` in the renderer process will send off an IPC message with the following arguments:
-  1. `ELECTRON_BROWSER_MEMBER_CALL`
-  2. `contextId`, an [internal](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/atom/renderer/renderer_client_base.cc#L115) string to uniquely identify the IPC caller's source [V8 context](https://v8.dev/docs/embed#contexts).
-  3. `metaId`, which comes from the `id` field of the `meta` that the main process returned during Round Trip #1. This is how the main process knows what function to call.
-  4. `member.name`
-  5. [`wrapArgs(args)`](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/lib/renderer/api/remote.js#L28), which does what you'd expect to serialize function arguments for IPC. Here, the `args` being passed in is the `2` that we're doubling.
+
+1. `ELECTRON_BROWSER_MEMBER_CALL`
+2. `contextId`, an [internal](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/atom/renderer/renderer_client_base.cc#L115) string to uniquely identify the IPC caller's source [V8 context](https://v8.dev/docs/embed#contexts).
+3. `metaId`, which comes from the `id` field of the `meta` that the main process returned during Round Trip #1. This is how the main process knows what function to call.
+4. `member.name`
+5. [`wrapArgs(args)`](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/lib/renderer/api/remote.js#L28), which does what you'd expect to serialize function arguments for IPC. Here, the `args` being passed in is the `2` that we're doubling.
 
 Over in the main process, the `handleRemoteCommand()` function we saw earlier [wraps](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/lib/browser/rpc-server.js#L418) its `ELECTRON_BROWSER_MEMBER_CALL` handler:
 
@@ -186,7 +189,7 @@ metaId is a key for looking up objects in the `objectsRegistry`. We do that here
 
 When the renderer process gets this, the `ipcRendererInternal.sendSync()` command inside the `remoteMemberFunction` at `main.doubleIt` finally returns. The `meta` is deserialized with `metaToValue()` and -- finally -- `4` is returned to the code in `renderer.js`.
 
-# Conclusion
+## Conclusion
 
 In this article we walked through how Electron's `remote.require()` handles all the proxying and IPC necessary to proxy functions between the renderer and main processes. And even though all the function did was add `2 + 2`, you've learned how Electron manages memory across processes.
 
