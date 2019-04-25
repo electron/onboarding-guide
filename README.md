@@ -1,11 +1,6 @@
 ## Electron - Guide and Resources
 
-|                  | Avatar                       | Start Date | End Date    | Buddy        | Manager      |
-|------------------|-----------------------------------|------------|-------------|--------------|--------------|
-| Erick Zhao       | <img src="https://github.com/erickzhao.png" width=100 alt="@erickzhao"> | 2019-06-10 | TBD | **@codebytere** | **@ckerr** |
-| Micha Hanselmann | <img src="https://github.com/deermichel.png" width=100 alt="@deermichel"> | 2019-06-10 | TBD | **@codebytere** | **@ckerr** |
-
-Welcome to the Electron team, **@erickzhao** & **@deermichel**! We're so excited to have you, and have prepared a basic guide of essential reading and resources for you to reference as you familiarize yourself with the codebase and its dependencies.
+This is a basic guide for getting started with Electron's codebase and its dependent codebases.
 
 # Table of Contents
 1. Electron
