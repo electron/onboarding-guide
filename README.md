@@ -2,6 +2,8 @@
 
 This is a basic guide for getting started with Electron's codebase and its dependent codebases.
 
+**NB:** It's still a work in progress, so there may be unexpected changes and updates.
+
 # Table of Contents
 1. Electron
    1. [Getting Started](electron/overview.md)
