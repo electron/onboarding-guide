@@ -18,3 +18,4 @@ This is a basic guide for getting started with Electron's codebase and its depen
    5. [`TaskRunner`](chromium/taskrunner.md)
 3. [V8](v8.md)
 4. [Node.js](nodejs.md)
+5. [Halp Guide](help-resources.md)
