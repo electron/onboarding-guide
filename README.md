@@ -30,3 +30,4 @@ This is a basic guide for getting started with Electron's codebase and its depen
 		* [`6-0-x`](https://github.com/electron/electron/projects/20)
 		* [`5-0-x`](https://github.com/electron/electron/projects/15)
 		* [`4-1-x`](https://github.com/orgs/electron/projects/17)
+7. [Governance](https://github.com/electron/governance)
