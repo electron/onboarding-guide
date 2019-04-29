@@ -15,7 +15,7 @@ Chromium and Electron both use what's known as [Multi-Process Architecture](http
 
 These are the top-level projects in Chromium's source.
 
-**NOTA BENE:** In particular, we care about `base`, `content`, `net`, [`third_party/blink`](blink.md), and `v8` (see [v8](v8.md) for more!).
+**NOTA BENE:** In particular, we care about `base`, `gin`, `content`, `net`, [`third_party/blink`](blink.md), and `v8` (see [v8](v8.md) for more!).
 
 * `android_webview`: Provides a facade over src/content suitable for integration into the android platform. NOT intended for usage in * individual android applications (APK). More information about the Android WebView source code organization.
 * `apps`: Chrome packaged apps.
@@ -34,7 +34,7 @@ These are the top-level projects in Chromium's source.
 * `sql`: Our wrap around sqlite.
 * `testing`: Contains Google's open-sourced GTest code which we use for unit testing.
 * `third_party`: 200+ small and large "external" libraries such as image decoders, compression libraries and the web engine Blink (here because it inherits license limitations from WebKit). Adding new packages.
-* `.../blink/renderer`: The web engine responsible for turning HTML, CSS and scripts into paint commands and other state changes. 
+* `.../blink/renderer`: The web engine responsible for turning HTML, CSS and scripts into paint commands and other state changes.
 tools
 * `ui/gfx`: Shared graphics classes. These form the base of Chromium's UI graphics.
 * `ui/views`: A simple framework for doing UI development, providing rendering, layout and event handling. Most of the browser UI is implemented in this system. This directory contains the base objects. Some more browser-specific objects are in chrome/browser/ui/views.

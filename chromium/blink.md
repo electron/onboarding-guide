@@ -1,6 +1,7 @@
 # Blink
 
 Blink is a rendering engine of the web platform, which can be found in Chromium's source code under `//third_party/blink`. Roughly speaking, Blink implements everything that renders content inside a browser tab:
+
 * Implement the specs of the web platform (e.g., HTML standard), including DOM, CSS and Web IDL
 * Embed V8 and run JavaScript
 * Request resources from the underlying network stack
