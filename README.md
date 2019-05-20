@@ -21,13 +21,13 @@ This is a basic guide for getting started with Electron's codebase and its depen
 4. [Node.js](nodejs.md)
 5. [Contributing To Electron](https://github.com/electron/electron/blob/master/CONTRIBUTING.md)
    1. [Issues](https://electronjs.org/docs/development/issues)
-	 	* [Good First Issues](https://github.com/electron/electron/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
-		* [Bugs](https://github.com/electron/electron/issues?q=is%3Aopen+is%3Aissue+label%3A%22bug+%3Abeetle%3A%22)
+      * [Good First Issues](https://github.com/electron/electron/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22)
+      * [Bugs](https://github.com/electron/electron/issues?q=is%3Aopen+is%3Aissue+label%3A%22bug+%3Abeetle%3A%22)
    2. [Pull Requests](https://electronjs.org/docs/development/pull-requests)
-   3. [Coding Style](https://electronjs.org/docs/development/coding-style
+   3. [Coding Style](https://electronjs.org/docs/development/coding-style)
 6. Electron Release Process
    1. Major Release Project Boards
-		* [`6-0-x`](https://github.com/electron/electron/projects/20)
-		* [`5-0-x`](https://github.com/electron/electron/projects/15)
-		* [`4-1-x`](https://github.com/orgs/electron/projects/17)
+      * [`6-0-x`](https://github.com/electron/electron/projects/20)
+      * [`5-0-x`](https://github.com/electron/electron/projects/15)
+      * [`4-1-x`](https://github.com/orgs/electron/projects/17)
 7. [Governance](https://github.com/electron/governance)
