@@ -9,7 +9,6 @@ This is a basic guide for getting started with Electron's codebase and its depen
 1. Electron
    1. [Getting Started](electron/overview.md)
    2. [Source Code Design](electron/overview.md#getting-around-the-source-code)
-   3. [Governance](https://github.com/electron/governance)
    4. [From Native to JS](electron/from-native-to-js.md)
 2. Chromium
    1. [Overview](chromium/overview.md)
