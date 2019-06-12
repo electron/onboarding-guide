@@ -78,3 +78,14 @@ A hierarchy chart is shown below. Any given module is implemented along the spec
 ```
 
 **Nota Bene:** A bunch of stuff in our source code is inside the `atom/` folder and prefixed with `atom_` because Electron [used to be called `atom-shell`](https://electronjs.org/blog/electron).
+
+## Versioning
+
+Starting with Electron 2.0.0, we use Node's [semantic versioning](https://docs.npmjs.com/about-semantic-versioning) for its releases. 
+ * Each new "breaking change" -- such as a new version of Node or Chromium or V8 -- is treated as a **major** change and so that release would get a new major version number, e.g. bumping from 6.0.0 to 7.0.0.
+ * New non-breaking features are **minor** changes, e.g. bumping from 6.0.0 to 6.1.0.
+ * A release that contains only bugfixes is a **patch** change, e.g. bumping from 6.0.0 to 6.0.1.
+
+Our production / stabilization branches follow this naming scheme. For example, the branchname for 6.0.x is [6-0-x](https://github.com/electron/electron/tree/6-0-x).
+
+Futher reading: [blog post](https://electronjs.org/blog/electron-2-semantic-boogaloo), [documentation](https://electronjs.org/docs/tutorial/electron-versioning)
