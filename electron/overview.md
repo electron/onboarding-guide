@@ -86,6 +86,6 @@ Starting with Electron 2.0.0, we use Node's [semantic versioning](https://docs.n
  * New non-breaking features are **minor** changes, e.g. bumping from 6.0.0 to 6.1.0.
  * A release that contains only bugfixes is a **patch** change, e.g. bumping from 6.0.0 to 6.0.1.
 
-Our production / stabilization branches follow this naming scheme. For example, the branchname for 6.0.x is [6-1-x](https://github.com/electron/electron/tree/6-0-x).
+Our production / stabilization branches follow this naming scheme. For example, the branchname for 6.0.x is [6-0-x](https://github.com/electron/electron/tree/6-0-x).
 
 Futher reading: [blog post](https://electronjs.org/blog/electron-2-semantic-boogaloo), [documentation](https://electronjs.org/docs/tutorial/electron-versioning)
