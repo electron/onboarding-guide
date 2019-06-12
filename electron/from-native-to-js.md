@@ -12,7 +12,7 @@ const binding = process.electronBinding('app')
 
 This line points directly to Electron's mechanism for binding its C++/Objective-C modules to JavaScript for use by developers.
 
-This function is created by the header and [implementation file](https://github.com/electron/electron/tree/master/atom/common/api/atom_bindings.cc) for the `ElectronBindings` class.
+This function is created by the header and [implementation file](https://github.com/electron/electron/tree/master/atom/common/api/electron_bindings.cc) for the `ElectronBindings` class.
 
 ## `process.electronBinding`
 
