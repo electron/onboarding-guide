@@ -87,3 +87,5 @@ Object.defineProperty(app, 'myProperty', {
 ```
 
 With this, it’s possible to create JavaScript objects formed with prototypes and properties as developers expect them, and more clearly reason about functions and properties implemented at this lower system level.
+
+For more examples and a visual overview of this mechanism, see [this talk](https://github.com/codebytere/talks/blob/master/modern-js-runtimes/from-native-to-js.pdf) given by @codebytere on the topic.
