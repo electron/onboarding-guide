@@ -2,7 +2,7 @@
 
 This is a basic guide for getting started with Electron's codebase and its dependent codebases.
 
-**NB:** It's still a work in progress, so there may be unexpected changes and updates.
+**NB:** This repository remains a work in progress, so there may be unexpected changes and updates.
 
 # Table of Contents
 
@@ -17,7 +17,7 @@ This is a basic guide for getting started with Electron's codebase and its depen
    4. [`Callback<>` and `Bind()`](chromium/callback-and-bind.md)
    5. [`TaskRunner`](chromium/taskrunner.md)
 3. [V8](v8.md)
-4. [Node.js](nodejs.md)
+4. [Node.js](nodejs/overview.md)
 5. [Contributing To Electron](https://github.com/electron/electron/blob/master/CONTRIBUTING.md)
    1. [Building Electron](https://github.com/electron/build-tools) 
    2. [Issues](https://electronjs.org/docs/development/issues)
