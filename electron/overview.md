@@ -146,4 +146,4 @@ Our production / stabilization branches follow this naming scheme. For example, 
 
 For branches older than v8, each minor version had it's own branch, a la `7-1-x` and `7-0-x`.
 
-Futher reading: [blog post](https://electronjs.org/blog/electron-2-semantic-boogaloo), [documentation](https://electronjs.org/docs/tutorial/electron-versioning)
+Further reading: [blog post](https://electronjs.org/blog/electron-2-semantic-boogaloo), [documentation](https://electronjs.org/docs/tutorial/electron-versioning)
