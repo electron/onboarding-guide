@@ -102,7 +102,7 @@ In the main process, [`valueToMeta()`](https://github.com/electron/electron/blob
 
 `meta.id` is also noteworthy: That's a key for looking up objects in `objectsRegistry` and we'll need it later to invoke `doubleIt()` in Round Trip #2.
 
-Next [is](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/lib/browser/rpc-server.js#L35) `getObjectMembers()`. It's straightforward enough: it uses [`Object.getOwnPropertyNames()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames) and [`Object.getOwnPropertyDesciptor()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor) to build an array of objects holding the methods' names, their types (method or accessor), whether they're enumerable, and so on.
+Next [is](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/lib/browser/rpc-server.js#L35) `getObjectMembers()`. It's straightforward enough: it uses [`Object.getOwnPropertyNames()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyNames) and [`Object.getOwnPropertyDescriptor()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertyDescriptor) to build an array of objects holding the methods' names, their types (method or accessor), whether they're enumerable, and so on.
 
 Third and last is [`getObjectPrototype()`](https://github.com/electron/electron/blob/3a091cdea46f7482d7fcf1be54f625e9a4989de5/lib/browser/rpc-server.js#L59), which walks up `value`'s prototype chain and repeats the `getObjectMembers()` step for the prototype.
 
