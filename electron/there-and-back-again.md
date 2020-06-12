@@ -144,7 +144,7 @@ const remoteMemberFunction = function (...args) {
 
 So when this code runs in the renderer in our doubleIt example:
 
-```javacript=
+```javascript=
 const { remote } = require('electron');
 const main = remote.require('./main.js');
 ```
