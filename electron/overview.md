@@ -1,6 +1,6 @@
 # Electron
 
-Electron is primarily comprised of three languages for its externally-facing functionality: JavaScript, C++, and Objective-C. At its core, Electron doesn't remove the need for platform-specific functionality to be written in a given system languages, it just obfuscates the system languages away from you so that you, a developer, to focus on a single simplified API surface area in JavaScript.
+Electron is primarily comprised of three languages for its externally-facing functionality: JavaScript, C++, and Objective-C. At its core, Electron doesn't remove the need for platform-specific functionality to be written in a given system language, it just obfuscates the system languages away from you so that you, a developer, can focus on a single simplified API surface area in JavaScript.
 
 ## Getting Around the Source Code
 
